@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Shasank Adhikari — Portfolio" />
+  <meta name="author" content="Shasank Adhikari" />
+
+  <meta property="og:title" content="Shasank Adhikari — Portfolio" />
+  <meta property="og:description" content="Crafting digital experiences with precision and empathy." />
+  <meta property="og:image" content="assets/images/og-preview.jpg" />
+  <meta property="og:url" content="https://yourdomain.com" />
+
+  <title>Shasank Adhikari | Portfolio</title>
+
+  <link rel="icon" type="image/png" href="assets/favicon/favicon.png" />
+  <link rel="apple-touch-icon" href="assets/favicon/apple-touch-icon.png" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Mono:wght@300;400;500&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="css/style.css" />
+
+  <script>
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme) {
+      document.documentElement.setAttribute('data-theme', savedTheme);
+    } else {
+      const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+      document.documentElement.setAttribute('data-theme', prefersDark ? 'dark' : 'light');
+    }
+  </script>
+</head>
+
+<body>
+
+  <div class="cursor" id="cursor"></div>
+  <div class="cursor-follower" id="cursorFollower"></div>
+
+  <div class="loader" id="loader">
+    <div class="loader-inner">
+      <span class="loader-text">S.A.</span>
+      <div class="loader-bar"><div class="loader-progress"></div></div>
+    </div>
+  </div>
+
+  <nav class="nav" id="nav">
+    <a href="#home" class="nav-logo">Shasank Adhikari</a>
+    <ul class="nav-links">
+      <li><a href="#about" class="nav-link">About</a></li>
+      <li><a href="#resume" class="nav-link">Resume</a></li>
+      <li><a href="#work" class="nav-link">Work</a></li>
+      <li><a href="gallery.html" class="nav-link">Gallery</a></li>
+      <li><a href="blogs.html" class="nav-link">Blogs</a></li>
+      <li><a href="#contact" class="nav-link">Contact</a></li>
+    </ul>
+    
+    <div class="nav-actions">
+      <button id="themeToggle" class="theme-toggle-btn" aria-label="Toggle theme">
+        <svg class="sun-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+        <svg class="moon-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+      </button>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <div class="mobile-menu" id="mobileMenu">
+    <ul>
+      <li><a href="#about" class="mobile-link">About</a></li>
+      <li><a href="#resume" class="mobile-link">Resume</a></li>
+      <li><a href="#work" class="mobile-link">Work</a></li>
+      <li><a href="gallery.html" class="mobile-link">Gallery</a></li>
+      <li><a href="blogs.html" class="mobile-link">Blogs</a></li>
+      <li><a href="#contact" class="mobile-link">Contact</a></li>
+    </ul>
+  </div>
+
+  <section class="hero" id="home">
+    <div class="hero-bg">
+      <div class="hero-grain"></div>
+      <div class="hero-glow"></div>
+    </div>
+    <div class="hero-content">
+      <p class="hero-eyebrow reveal">Hello, I'm</p>
+      <h1 class="hero-name reveal">
+        <span class="line">Shasank</span>
+        <span class="line accent">Adhikari</span>
+      </h1>
+      <p class="hero-title reveal">Full-Stack Developer & Designer</p>
+      <p class="hero-tagline reveal">"I craft minimalist, functional web applications that turn complex logic into elegant systems."</p>
+      <div class="hero-cta reveal">
+        <a href="#work" class="btn btn-primary">View My Work</a>
+        <a href="#contact" class="btn btn-ghost">Get In Touch</a>
+      </div>
+    </div>
+    <div class="hero-scroll">
+      <span>Scroll</span>
+      <div class="scroll-line"></div>
+    </div>
+    
+    <div class="hero-socials">
+      <a href="https://github.com/shasankadhikari" target="_blank" class="social-link" aria-label="GitHub">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
+      </a>
+      <a href="https://www.linkedin.com/in/shasank-adhikari-3bb605232/" target="_blank" class="social-link" aria-label="LinkedIn">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+      </a>
+      <a href="https://www.facebook.com/shasank.adhikari/" target="_blank" class="social-link" aria-label="Facebook">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+      </a>
+      <a href="https://instagram.com/_shasank_/" target="_blank" class="social-link" aria-label="Instagram">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+      </a>
+    </div>
+  </section>
+
+  <section class="about section" id="about">
+    <div class="container">
+      <div class="section-header reveal">
+        <p class="section-label">01 — About</p>
+        <h2 class="section-title">Who I Am</h2>
+      </div>
+      <div class="about-grid">
+        <div class="about-image reveal">
+          <div class="image-frame">
+            <img src="assets/images/profile.jpg" alt="Shasank Adhikari" loading="lazy" />
+            <div class="image-overlay"></div>
+          </div>
+          <div class="image-tag">
+            <span>Kathmandu, Nepal 📍</span>
+          </div>
+        </div>
+        <div class="about-text">
+          <p class="about-bio reveal">
+            I am a dedicated technologist specializing in crafting intuitive and robust web architecture. I find profound joy in identifying intricate software obstacles and rendering them into seamless, minimalist, high-performance interfaces.
+          </p>
+          <p class="about-bio reveal">
+            With a focus on engineering codebases that emphasize fluid design mechanics alongside robust backend systems, I strive to write web systems positioned precisely at the intersection of aesthetic craft and pure code architecture.
+          </p>
+          <div class="about-stats reveal">
+            <div class="stat">
+              <span class="stat-number">15+</span>
+              <span class="stat-label">Projects Done</span>
+            </div>
+            <div class="stat">
+              <span class="stat-number">2+</span>
+              <span class="stat-label">Years Experience</span>
+            </div>
+            <div class="stat">
+              <span class="stat-number">10+</span>
+              <span class="stat-label">Happy Clients</span>
+            </div>
+          </div>
+          <a href="assets/files/resume.pdf" class="btn btn-primary reveal" target="_blank">Download CV</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="resume section" id="resume">
+    <div class="container">
+      <div class="section-header reveal">
+        <p class="section-label">02 — Biography</p>
+        <h2 class="section-title">Academic & Professional Journey</h2>
+      </div>
+      <div class="resume-grid">
+        <div class="resume-column">
+          <h3 class="resume-subheading">Education</h3>
+          <div class="resume-timeline">
+            
+            <div class="resume-item reveal">
+              <a href="https://tu.edu.np" target="_blank" class="resume-logo-link">
+                <img src="assets/images/tu-logo.png" alt="Tribhuvan University Logo" class="resume-logo" />
+              </a>
+              <div class="resume-details">
+                <h4><a href="https://tu.edu.np" target="_blank" class="resume-title-link">Tribhuvan University</a></h4>
+                <p class="resume-meta">Bachelor of Science in Computer Science & Information Technology (B.Sc. CSIT)</p>
+                <span class="resume-year">Passed Year: 2025</span>
+              </div>
+            </div>
+
+            <div class="resume-item reveal">
+              <a href="https://examplecollege.edu.np" target="_blank" class="resume-logo-link">
+                <img src="assets/images/college-logo.png" alt="College Logo" class="resume-logo" />
+              </a>
+              <div class="resume-details">
+                <h4><a href="https://examplecollege.edu.np" target="_blank" class="resume-title-link">Higher Secondary Education Institution</a></h4>
+                <p class="resume-meta">Science Stream (+2 Board)</p>
+                <span class="resume-year">Passed Year: 2021</span>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <div class="resume-column">
+          <h3 class="resume-subheading">Experience</h3>
+          <div class="resume-timeline">
+
+            <div class="resume-item reveal">
+              <a href="https://techcompany.com" target="_blank" class="resume-logo-link">
+                <img src="assets/images/company-logo1.png" alt="Company Logo" class="resume-logo" />
+              </a>
+              <div class="resume-details">
+                <h4><a href="https://techcompany.com" target="_blank" class="resume-title-link">TechInnovate Solutions</a></h4>
+                <p class="resume-meta">Designation: Software Engineer (Full-Stack)</p>
+                <span class="resume-year">Work Year: 2025 — Present</span>
+              </div>
+            </div>
+
+            <div class="resume-item reveal">
+              <a href="https://agencysite.com" target="_blank" class="resume-logo-link">
+                <img src="assets/images/company-logo2.png" alt="Company Logo" class="resume-logo" />
+              </a>
+              <div class="resume-details">
+                <h4><a href="https://agencysite.com" target="_blank" class="resume-title-link">Vortex Digital Agency</a></h4>
+                <p class="resume-meta">Designation: Associate Web Developer</p>
+                <span class="resume-year">Work Year: 2023 — 2024</span>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="work section" id="work">
+    <div class="container">
+      <div class="section-header reveal">
+        <p class="section-label">03 — Work</p>
+        <h2 class="section-title">Selected Systems</h2>
+      </div>
+      <div class="projects-list">
+        <article class="project-item reveal">
+          <div class="project-meta">
+            <span class="project-number">01</span>
+            <span class="project-category">Web Platform</span>
+            <span class="project-year">2026</span>
+          </div>
+          <div class="project-content">
+            <h3 class="project-title">Autonomous Web Analytics Framework</h3>
+            <p class="project-desc">A beautiful real-time analytics data mesh designed to monitor performance overhead across globally distributed hybrid edge setups seamlessly.</p>
+            <div class="project-stack">
+              <span>Next.js</span><span>TypeScript</span><span>Go</span><span>ClickHouse</span>
+            </div>
+            <div class="project-links">
+              <a href="#" class="project-link">Live Demo ↗</a>
+              <a href="https://github.com/shasankadhikari" target="_blank" class="project-link">GitHub ↗</a>
+            </div>
+          </div>
+          <div class="project-image">
+            <img src="assets/images/project-1.jpg" alt="Analytics System" loading="lazy" />
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="contact section" id="contact">
+    <div class="container">
+      <div class="section-header reveal">
+        <p class="section-label">04 — Connect</p>
+        <h2 class="section-title">Let's Talk</h2>
+      </div>
+      <div class="contact-wrapper">
+        <div class="contact-left reveal">
+          <p class="contact-intro">Have a complex technical problem, architecture model, or a compelling project that requires clean engineering precision? Let's connect.</p>
+          <div class="contact-details">
+            <a href="mailto:shasankadhikari@example.com" class="contact-item">
+              <span class="contact-label">Email</span>
+              <span class="contact-value">shasankadhikari@example.com</span>
+            </a>
+            <a href="tel:+9779800000000" class="contact-item">
+              <span class="contact-label">Phone</span>
+              <span class="contact-value">+977 980-0000000</span>
+            </a>
+            <div class="contact-item">
+              <span class="contact-label">Location</span>
+              <span class="contact-value">Kathmandu, Nepal</span>
+            </div>
+          </div>
+          <div class="contact-socials-footer">
+            <a href="https://github.com/shasankadhikari" target="_blank" title="GitHub">GitHub</a>
+            <a href="https://www.linkedin.com/in/shasank-adhikari-3bb605232/" target="_blank" title="LinkedIn">LinkedIn</a>
+            <a href="https://www.facebook.com/shasank.adhikari/" target="_blank" title="Facebook">Facebook</a>
+            <a href="https://instagram.com/_shasank_/" target="_blank" title="Instagram">Instagram</a>
+          </div>
+        </div>
+        
+        <form class="contact-form reveal" id="contactForm" action="https://formspree.io/f/your_form_id" method="POST">
+          <div class="form-group">
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" placeholder="Your Name" required />
+          </div>
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" placeholder="you@example.com" required />
+          </div>
+          <div class="form-group">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" rows="5" placeholder="Tell me about your project requirement..." required></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary">Send Message →</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-inner">
+        <p class="footer-copy">© <span id="year"></span> Shasank Adhikari. All Rights Reserved.</p>
+        <p class="footer-note">Minimalist Engineering & Craft</p>
+      </div>
+    </div>
+  </footer>
+
+  <button id="backToTop" class="back-to-top" aria-label="Move to Top">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="19" x2="12" y2="5"/><polyline points="5,12 12,5 19,12"/></svg>
+  </button>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
